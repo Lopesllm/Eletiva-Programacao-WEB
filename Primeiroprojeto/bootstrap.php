@@ -47,11 +47,22 @@ $r->get('/exer2/formulario', function(){
     include("exer2.html");
 } );
 
-/* $r->get('/exer3/formulario', function(){
+$r->get('/exer3/formulario', function(){
     include("exer3.html");
+    
 } );
 
-$r->get('/exer4/formulario', function(){
+$r->post('/exer3/resposta', function(){
+    $valor1 = $_POST['valor1'];
+    $valor2 = $_POST['valor2'];
+    if($valor1 == $valor2){
+        $soma = ($valor1 + $valor2)*3;
+        return "Valores iguais... O triplo da soma é: {$soma}"
+        }
+    return "A soma é: {$soma}";
+});
+
+/* $r->get('/exer4/formulario', function(){
     include("exer4.html");
 } );
 
